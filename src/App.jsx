@@ -1,34 +1,32 @@
-import styles from './styles'
-import { Navbar, Stats, Buisness, Billing, CardDeal, Testemonial, Client, CTA, Footer, Hero } from './components'
+import React from 'react';
+import { Navbar, Hero, About, Contact, Message } from './components';
+import { Element } from 'react-scroll';
 
 const App = () => (
-  <div className='bg-primary w-full overflow-hidden'>
-    <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-      <div className={`${styles.boxWidth}`}>
+  <div>
+    <header className='mb-[5rem]'>
+      <Element name="/">
         <Navbar />
-      </div>
-    </div>
-    
-    <div className={`bg-pirmary ${styles.flexStart}`}>
-      <div className={`${styles.boxWidth}`}>
+      </Element>
+    </header>
+    <main>
+      <Element name="/">
         <Hero />
-      </div>
-    </div>
+      </Element>
+      <Element name='about'>
+        <About />
+      </Element>
+      <Element name='contact'>
+        <Contact />
+      </Element>
+    </main>
+    <footer>
+      <Element name='message'>
+        <Message />
+      </Element>
 
-    <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}}`}>
-      <div className={`${styles.boxWidth}`}>
-        <Stats />
-        <Buisness />
-        <Billing />
-        <CardDeal />
-        <Testemonial />
-        <Client />
-        <CTA />
-        <Footer />
-      </div>
-    </div>
-
+    </footer>
   </div>
-)
+);
 
-export default App
+export default App;
